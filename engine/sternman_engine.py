@@ -1,14 +1,15 @@
-from abc import ABC
-
-from main import Engine
+from .engine_interface import Engine
 
 
-class SternmanEngine(Engine, ABC):
-    def __init__(self, last_service_date, warning_light_is_on):
-        super().__init__(last_service_date)
+class SternmanEngine(Engine):
+    """
+    :param warning_light_is_on : Indication on the car either `True` or `False`(on or off).
+    """
+    def __init__(self, warning_light_is_on):
         self.warning_light_is_on = warning_light_is_on
 
-    def engine_should_be_serviced(self):
+    def needs_service(self) -> bool:
+        """Return `True` if the `warning_light_is_on` is on(True). Otherwise, `False`."""
         if self.warning_light_is_on:
             return True
         else:
