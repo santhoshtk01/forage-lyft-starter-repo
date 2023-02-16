@@ -13,7 +13,7 @@ class SpindlerBattery(Battery):
 
     def needs_service(self) -> bool:
         """Checks the date and return `True` if car needs service. Otherwise, `False`."""
-        next_service_date = datetime.strptime(self.last_service_date, '%m/%d/%Y') + timedelta(days=730)
+        next_service_date = datetime.strptime(self.last_service_date, '%m/%d/%Y') + timedelta(days=1095)
         next_service_date = datetime(next_service_date.year, next_service_date.month, next_service_date.day)
         current_date = datetime(self.current_date.year, self.current_date.month, self.current_date.day)
 
