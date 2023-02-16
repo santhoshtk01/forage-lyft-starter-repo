@@ -6,14 +6,14 @@ from engine import capulet_engine, sternman_engine, willoughby_engine
 
 class NubbinBatteryTest(unittest.TestCase):
 
-    def test_battery_should_be_serviced(self):
+    def test_battery_needs_service(self):
         current_date = datetime.now()
         last_serviced_date = '07/05/2003'
 
         nubbinBattery = nubbin_battery.NubbinBattery(last_serviced_date, current_date)
         self.assertTrue(nubbinBattery.needs_service())
 
-    def test_battery_should_not_be_serviced(self):
+    def test_battery_no_need_service(self):
         current_date = datetime.now()
         last_serviced_date = '06/12/2022'
 
@@ -23,14 +23,14 @@ class NubbinBatteryTest(unittest.TestCase):
 
 class SpindlerBatteryTest(unittest.TestCase):
 
-    def test_battery_should_be_serviced(self):
+    def test_battery_needs_service(self):
         current_date = datetime.now()
         last_serviced_date = '07/05/2003'
 
         spindlerBattery = spindler_battery.SpindlerBattery(last_serviced_date, current_date)
         self.assertTrue(spindlerBattery.needs_service())
 
-    def test_battery_should_not_be_serviced(self):
+    def test_battery_no_need_service(self):
         current_date = datetime.now()
         last_serviced_date = '06/12/2022'
 
