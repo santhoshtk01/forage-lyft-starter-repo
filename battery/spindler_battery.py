@@ -3,13 +3,13 @@ from .battery_interface import Battery
 
 
 class SpindlerBattery(Battery):
-    def __init__(self, last_service_date):
+    def __init__(self, last_service_date, current_date):
         """
         :param last_service_date : The date of the last service of the car. Format : mm/dd/yyyy.
         :param current_date : Current date from 'datetime.datetime'
         """
         self.last_service_date = last_service_date
-        self.current_date = datetime.now()
+        self.current_date = current_date
 
     def needs_service(self) -> bool:
         """Checks the date and return `True` if car needs service. Otherwise, `False`."""
